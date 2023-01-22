@@ -1,0 +1,34 @@
+
+services:
+  postgres_db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=webtronics
+    networks:
+      - backend
+  
+  redis_db:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+  web_app:
+    build: ./
+    ports:
+     - "80:80"
+    depends_on:
+      - postgres_db
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+    name: backend
+  
