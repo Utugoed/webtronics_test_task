@@ -11,3 +11,6 @@ To start and test this app:
 
 3. Run docker-compose:
     docker-compose up
+
+4. Test the app from your browser:
+    127.0.0.1/docs
