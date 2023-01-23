@@ -1,3 +1,5 @@
+import asyncio
+
 from fastapi import FastAPI
 
 from app.api import api_router
@@ -14,7 +16,6 @@ async def startup_event():
     from app.db import database, engine, metadata
 
     await database.connect()
-    metadata.create_all(engine)
 
 
 @app.on_event("shutdown")

@@ -6,8 +6,8 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=webtronics
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     networks:
       - backend
   

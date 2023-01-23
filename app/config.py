@@ -2,8 +2,8 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
+    POSTGRES_USER: str = "webtronics"
+    POSTGRES_PASSWORD: str = "password"
     POSTGRES_HOST: str = "postgres_db"
     POSTGRES_PORT: int = 5432
 

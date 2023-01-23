@@ -17,7 +17,7 @@ database = Database(POSTGRES_URL)
 engine = create_engine(url=POSTGRES_URL)
 
 metadata = MetaData()
-#metadata.create_all(engine)
+metadata.create_all(engine)
 
 
 def get_db():
